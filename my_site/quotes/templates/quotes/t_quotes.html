@@ -1,0 +1,26 @@
+{% extends "quotes/base.html" %}
+{% load extract_tags %}
+
+{% block content %}
+
+<div class="container py-4">
+    <h2>Your quotes for tag: {{ tg.name }}</h2>
+    {% for quote in t_quotes %}
+    <div class="row align-items-md-stretch">
+        <div class="col-md-10">
+            <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+                <h2><a href="{% url 'quotes:about' quote.author.id %}">{{quote.author}}</a></h2>
+                <p>{{quote.text}}</p>
+                <p>Tags: <small>
+                    {% for tag in quote.tags|tags %}
+                    <a href="{% url 'quotes:t_quotes' tag.id %}" style="border-bottom:  none ;">{{ tag.name }},</a>
+                    {% endfor %}
+                </small></p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

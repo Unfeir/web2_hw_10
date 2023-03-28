@@ -1,0 +1,20 @@
+{% extends "quotes/base.html" %}
+
+{% block content %}
+<a href="{% url 'quotes:add_author' %}" class="btn btn-outline-primary btn-lg" style="color: #980B92"  type="button">ADD Author</a>
+
+<div class="container py-4">
+    <div class="row align-items-md-stretch">
+        <div class="col-md-6">
+            <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+                <h2>{{author.fullname}}</h2>
+                <p>{{author.born_date}}</p>
+                <p>{{author.born_location}}</p>
+                <p>{{author.description}}</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

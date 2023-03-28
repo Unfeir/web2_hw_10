@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "hw-10"
+version = "0.1.0"
+description = ""
+authors = ["Anton Holovin <54354764+Unfeir@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "hw_10"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.1.7"
+pillow = "^9.4.0"
+psycopg2-binary = "^2.9.5"
+datetime = "^5.1"
+faker = "^18.3.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
